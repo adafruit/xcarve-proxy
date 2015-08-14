@@ -1,0 +1,14 @@
+{
+  "name": "xcarve-proxy",
+  "version": "0.1.0",
+  "description": "A Node.js proxy server for connecting to a Raspberry Pi that is running xcarve-server.",
+  "bin": "./cli",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Todd Treece <todd@uniontownlabs.org>",
+  "license": "MIT",
+  "dependencies": {
+    "http-proxy": "^1.11.1"
+  }
+}
