@@ -42,7 +42,7 @@ stopping proxy...
 ```
 ## License
 
-Copyright (c) 2014 Adafruit Industries. Licensed under the MIT license.
+Copyright (c) 2015 Adafruit Industries. Licensed under the MIT license.
 
 Adafruit invests time and resources providing this open source code,
 please support Adafruit and open-source hardware by purchasing products
