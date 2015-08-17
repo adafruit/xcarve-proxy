@@ -12,9 +12,8 @@ var command = process.platform === 'win32' ? 'forever.cmd' : 'forever';
 
 function start() {
 
-  process.chdir(path.normalize(__dirname));
-
   var child = spawn(command, ['start', '-c', 'node', 'index.js', '-s'], {
+    cwd: __dirname,
     env: process.env,
     detached: true
   });
@@ -28,9 +27,8 @@ function start() {
 
 function stop() {
 
-  process.chdir(path.normalize(__dirname));
-
   var child = spawn(command, ['stop', '-c', 'node', 'index.js', '-s'], {
+    cwd: __dirname,
     env: process.env,
     detached: true
   });
@@ -50,3 +48,4 @@ if (!process.argv.slice(2).length) {
   cli.outputHelp();
 }
 
+process.exit();

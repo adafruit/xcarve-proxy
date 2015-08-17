@@ -1,6 +1,6 @@
 var util = require('util'),
     httpProxy = require('http-proxy'),
-    host = 'xcarve.local',
+    host = (process.platform === 'win32' ? 'xcarve' : 'xcarve.local'),
     port = 1338;
 
 var server = httpProxy.createServer({
