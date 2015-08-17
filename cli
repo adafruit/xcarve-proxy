@@ -10,7 +10,7 @@ var spawn = require('child_process').spawn,
 
 function start() {
 
-  var child = spawn('forever', ['start', 'index.js', '-s'], {
+  var child = spawn('forever', ['start', '-c', 'node', 'index.js', '-s'], {
     cwd: __dirname,
     env: process.env,
     detached: true
@@ -25,7 +25,7 @@ function start() {
 
 function stop() {
 
-  var child = spawn('forever', ['stop', 'index.js', '-s'], {
+  var child = spawn('forever', ['stop', '-c', 'node', 'index.js', '-s'], {
     cwd: __dirname,
     env: process.env,
     detached: true
