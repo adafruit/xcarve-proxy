@@ -40,6 +40,13 @@ Visit [easel.inventables.com][2] to test out the proxy.
 $ xcarve-proxy stop
 stopping proxy...
 ```
+## License
+
+Copyright (c) 2014 Adafruit Industries. Licensed under the MIT license.
+
+Adafruit invests time and resources providing this open source code,
+please support Adafruit and open-source hardware by purchasing products
+from [Adafruit](https://adafruit.com)!
 
 [1]: https://github.com/adafruit/xcarve-server
 [2]: http://easel.inventables.com
