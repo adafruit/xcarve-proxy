@@ -6,9 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Todd Treece <todd@uniontownlabs.org>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adafruit/xcarve-proxy"
+  },
+  "keywords": [
+    "adafruit",
+    "xcarve",
+    "inventables",
+    "raspberry pi"
+  ],
+  "author": "Todd Treece <todd@uniontownlabs.org>",
+  "bugs": {
+    "url": "https://github.com/adafruit/xcarve-proxy/issues"
+  },
+  "homepage": "https://github.com/adafruit/xcarve-proxy",
   "dependencies": {
+    "commander": "^2.8.1",
     "http-proxy": "^1.11.1"
   }
 }

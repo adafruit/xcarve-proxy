@@ -1,18 +1,48 @@
 #!/usr/bin/env node
 
-var child,
-    spawn = require('child_process').spawn,
+var spawn = require('child_process').spawn,
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    logo = fs.readFileSync(path.join(__dirname,'logo.txt'), 'utf8'),
+    cli = require('commander'),
+    package = require('./package.json');
 
-var logo = fs.readFileSync(path.join(__dirname,'logo.txt'), 'utf8');
 
-console.log(logo);
+function start() {
 
-child = spawn('forever', ['start', 'index.js', '-s'], {
-  cwd: __dirname,
-  env: process.env,
-  detached: true
-});
+  var child = spawn('forever', ['start', 'index.js', '-s'], {
+    cwd: __dirname,
+    env: process.env,
+    detached: true
+  });
 
-child.on('error', console.log);
+  console.log(logo);
+  console.log('starting proxy on port 1338...');
+
+  child.on('error', console.log);
+
+}
+
+function stop() {
+
+  var child = spawn('forever', ['stop', 'index.js', '-s'], {
+    cwd: __dirname,
+    env: process.env,
+    detached: true
+  });
+
+  console.log('stopping proxy...');
+
+  child.on('error', console.log);
+
+}
+
+cli.version(package.version);
+cli.command('start').description('starts the local xcarve proxy').action(start);
+cli.command('stop').description('stops the local xcarve proxy').action(stop);
+cli.parse(process.argv);
+
+if (!process.argv.slice(2).length) {
+  cli.outputHelp();
+}
+
