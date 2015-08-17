@@ -8,11 +8,13 @@ var spawn = require('child_process').spawn,
     package = require('./package.json');
 
 
+var command = process.platform === 'win32' ? 'forever.cmd' : 'forever';
+
 function start() {
 
   process.chdir(path.normalize(__dirname));
 
-  var child = spawn('forever', ['start', '-c', 'node', 'index.js', '-s'], {
+  var child = spawn(command, ['start', '-c', 'node', 'index.js', '-s'], {
     env: process.env,
     detached: true
   });
@@ -28,7 +30,7 @@ function stop() {
 
   process.chdir(path.normalize(__dirname));
 
-  var child = spawn('forever', ['stop', '-c', 'node', 'index.js', '-s'], {
+  var child = spawn(command, ['stop', '-c', 'node', 'index.js', '-s'], {
     env: process.env,
     detached: true
   });
