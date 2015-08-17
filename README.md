@@ -15,12 +15,12 @@ Install `forever` and `xcarve-proxy` on your computer using `npm`.
 $ npm install -g forever xcarve-proxy
 ```
 
-## Starting the Daemon
+## Starting the Proxy
 Make sure you have [xcarve-server][1] running on your Raspberry Pi before continuing. If everything has
 been setup properly, you can start the proxy daemon by running the following command:
 
 ```
-$ xcarve-proxy
+$ xcarve-proxy start
 
 ██╗  ██╗      ██████╗ █████╗ ██████╗ ██╗   ██╗███████╗
 ╚██╗██╔╝     ██╔════╝██╔══██╗██╔══██╗██║   ██║██╔════╝
@@ -29,15 +29,16 @@ $ xcarve-proxy
 ██╔╝ ██╗     ╚██████╗██║  ██║██║  ██║ ╚████╔╝ ███████╗
 ╚═╝  ╚═╝      ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝
 
-starting proxy daemon on port 1338...
+starting proxy on port 1338...
 ```
 
 Visit [easel.inventables.com][2] to test out the proxy.
 
-## Stopping the Daemon
+## Stopping the Proxy
 
 ```
-$ forever stopall
+$ xcarve-proxy stop
+stopping proxy...
 ```
 
 [1]: https://github.com/adafruit/xcarve-server
