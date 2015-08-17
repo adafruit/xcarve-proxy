@@ -10,8 +10,9 @@ var spawn = require('child_process').spawn,
 
 function start() {
 
+  process.chdir(path.normalize(__dirname));
+
   var child = spawn('forever', ['start', '-c', 'node', 'index.js', '-s'], {
-    cwd: path.normalize(__dirname),
     env: process.env,
     detached: true
   });
@@ -25,8 +26,9 @@ function start() {
 
 function stop() {
 
+  process.chdir(path.normalize(__dirname));
+
   var child = spawn('forever', ['stop', '-c', 'node', 'index.js', '-s'], {
-    cwd: path.normalize(__dirname),
     env: process.env,
     detached: true
   });
