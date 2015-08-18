@@ -1,5 +1,6 @@
 # XCarve Proxy
 A Node.js proxy server for connecting to a remote XCarve via a Raspberry Pi that is running [xcarve-server][1].
+For detailed install instructions, please visit the tutorial on the [Adafruit Learning System][4].
 
 ## Installation
 
@@ -51,3 +52,4 @@ from [Adafruit](https://adafruit.com)!
 [1]: https://github.com/adafruit/xcarve-server
 [2]: http://easel.inventables.com
 [3]: https://nodejs.org
+[4]: https://learn.adafruit.com/control-an-xcarve-wirelessly
