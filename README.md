@@ -6,13 +6,13 @@ For detailed install instructions, please visit the tutorial on the [Adafruit Le
 
 Make sure you have the latest stable version of [Node.js][3] installed on your computer.
 
-```
+```console
 $ node -v
 v0.12.6
 ```
 Install `forever` and `xcarve-proxy` on your computer using `npm`.
 
-```
+```console
 $ npm install -g forever xcarve-proxy
 ```
 
@@ -20,7 +20,7 @@ $ npm install -g forever xcarve-proxy
 Make sure you have [xcarve-server][1] running on your Raspberry Pi before continuing. If everything has
 been setup properly, you can start the proxy daemon by running the following command:
 
-```
+```console
 $ xcarve-proxy start
 
 ██╗  ██╗      ██████╗ █████╗ ██████╗ ██╗   ██╗███████╗
@@ -33,11 +33,11 @@ $ xcarve-proxy start
 starting proxy on port 1338...
 ```
 
-Visit [easel.inventables.com][2] to test out the proxy.
+Visit [easel.inventables.com][2] to test the proxy.
 
 ## Stopping the Proxy
 
-```
+```console
 $ xcarve-proxy stop
 stopping proxy...
 ```
