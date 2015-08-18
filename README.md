@@ -52,4 +52,4 @@ from [Adafruit](https://adafruit.com)!
 [1]: https://github.com/adafruit/xcarve-server
 [2]: http://easel.inventables.com
 [3]: https://nodejs.org
-[4]: https://learn.adafruit.com/control-an-xcarve-wirelessly
+[4]: https://learn.adafruit.com/control-an-xcarve-cnc-machine-wirelessly-with-a-raspberry-pi
