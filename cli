@@ -22,6 +22,9 @@ function start() {
   console.log('starting proxy on port 1338...');
 
   child.on('error', console.log);
+  child.on('exit', function(code) {
+    process.exit(code);
+  });
 
 }
 
@@ -36,6 +39,9 @@ function stop() {
   console.log('stopping proxy...');
 
   child.on('error', console.log);
+  child.on('exit', function(code) {
+    process.exit(code);
+  });
 
 }
 
@@ -47,5 +53,3 @@ cli.parse(process.argv);
 if (!process.argv.slice(2).length) {
   cli.outputHelp();
 }
-
-process.exit();
