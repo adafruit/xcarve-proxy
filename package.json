@@ -1,6 +1,6 @@
 {
   "name": "xcarve-proxy",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A Node.js proxy server for connecting to a Raspberry Pi that is running xcarve-server.",
   "bin": "./cli",
   "scripts": {
