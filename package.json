@@ -24,6 +24,7 @@
   "homepage": "https://github.com/adafruit/xcarve-proxy",
   "dependencies": {
     "commander": "^2.8.1",
-    "http-proxy": "^1.11.1"
+    "http-proxy": "^1.11.1",
+    "pm2": "^2.1.4"
   }
 }

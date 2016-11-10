@@ -1,46 +1,51 @@
 #!/usr/bin/env node
 
-var spawn = require('child_process').spawn,
+var pm2 = require('pm2'),
     fs = require('fs'),
     path = require('path'),
     logo = fs.readFileSync(path.join(__dirname,'logo.txt'), 'utf8'),
     cli = require('commander'),
     package = require('./package.json');
 
-
-var command = process.platform === 'win32' ? 'forever.cmd' : 'forever';
-
 function start() {
 
-  var child = spawn(command, ['start', '-c', 'node', 'index.js', '-s'], {
-    cwd: __dirname,
-    env: process.env,
-    detached: true
-  });
-
   console.log(logo);
-  console.log('starting proxy on port 1338...');
 
-  child.on('error', console.log);
-  child.on('exit', function(code) {
-    process.exit(code);
+  pm2.connect((err) => {
+
+    if(err) {
+      console.error(err);
+      process.exit(2);
+    }
+
+    pm2.start({
+      script: 'index.js',
+      name: 'xcarve'
+    }, (err, apps) => {
+      pm2.disconnect();
+      if (err) throw err
+      console.log('starting proxy on port 1338...\n');
+    });
+
   });
 
 }
 
 function stop() {
 
-  var child = spawn(command, ['stop', '-c', 'node', 'index.js', '-s'], {
-    cwd: __dirname,
-    env: process.env,
-    detached: true
-  });
+  pm2.connect((err) => {
 
-  console.log('stopping proxy...');
+    if(err) {
+      console.error(err);
+      process.exit(2);
+    }
 
-  child.on('error', console.log);
-  child.on('exit', function(code) {
-    process.exit(code);
+    pm2.stop('xcarve', (err) => {
+      if(err) throw err;
+      console.log('stopping proxy...');
+      process.exit();
+    });
+
   });
 
 }
