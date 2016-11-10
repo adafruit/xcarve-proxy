@@ -8,12 +8,12 @@ Make sure you have the latest stable version of [Node.js][3] installed on your c
 
 ```console
 $ node -v
-v0.12.6
+v7.0.0
 ```
-Install `forever` and `xcarve-proxy` on your computer using `npm`.
+Install `xcarve-proxy` on your computer using `npm`.
 
 ```console
-$ npm install -g forever xcarve-proxy
+$ npm install -g xcarve-proxy
 ```
 
 ## Starting the Proxy
@@ -43,7 +43,7 @@ stopping proxy...
 ```
 ## License
 
-Copyright (c) 2015 Adafruit Industries. Licensed under the MIT license.
+Copyright (c) 2015-2016 Adafruit Industries. Licensed under the MIT license.
 
 Adafruit invests time and resources providing this open source code,
 please support Adafruit and open-source hardware by purchasing products
