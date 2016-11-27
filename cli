@@ -19,7 +19,7 @@ function start() {
     }
 
     pm2.start({
-      script: 'index.js',
+      script: path.join(__dirname,'index.js'),
       name: 'xcarve'
     }, (err, apps) => {
       pm2.disconnect();
